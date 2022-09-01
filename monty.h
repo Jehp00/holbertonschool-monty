@@ -72,7 +72,7 @@ void decide_op(stack_t **stack, char *op, unsigned int line_num);
 
 void instruction_push(stack_t **stack, unsigned int line_num);
 void instruction_pall(stack_t **stack, unsigned int line_num);
-
+void instruction_pint(stack_t **stack, unsigned int line_num);
 /*monty_man.c*/
 
 void stack_int(stack_t **head);

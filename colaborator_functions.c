@@ -40,16 +40,17 @@ int file_proccessing(char *name, stack_t **stack)
 void decide_op(stack_t **stack, char *op, unsigned int line_num)
 {
 	int a = 0;
-	instruction_t ops[] = {
+	instruction_t all_ops[] = {
 		{"push", instruction_push},
 		{"pall", instruction_pall},
+		{"pint", instruction_pint},
 		{NULL, NULL}
 	};
-	for (a = 0; ops[a].opcode; a++)
+	for (a = 0; all_ops[a].opcode; a++)
 	{
-		if (strcmp(op, ops[a].opcode) == 0)
+		if (strcmp(op, all_ops[a].opcode) == 0)
 		{
-			ops[a].f(stack, line_num);
+			all_ops[a].f(stack, line_num);
 			return;
 		}
 	}

@@ -40,3 +40,13 @@ void instruction_pall(stack_t **stack, unsigned int line_num)
 		element = element->next;
 	}	
 }
+
+void instruction_pint(stack_t **stack, unsigned int line_num)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L%u: Can't pint, stack empty\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
+}
