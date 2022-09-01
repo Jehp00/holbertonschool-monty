@@ -44,6 +44,10 @@ void decide_op(stack_t **stack, char *op, unsigned int line_num)
 		{"push", instruction_push},
 		{"pall", instruction_pall},
 		{"pint", instruction_pint},
+		{"pop", instruction_pop},
+		{"swap", instruction_swap},
+		{"add", instruction_add},
+		{"nop", instruction_nop},
 		{NULL, NULL}
 	};
 	for (a = 0; all_ops[a].opcode; a++)

@@ -50,3 +50,38 @@ void instruction_pint(stack_t **stack, unsigned int line_num)
 	}
 	printf("%d\n", (*stack)->n);
 }
+
+void instruction_pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *node;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		printf("L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	node  = *stack;
+	(*stack) = (*stack)->next;
+	free(node);
+}
+
+void instruction_swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+
+	UNUSED(line_number);
+	if (!(*stack) || !((*stack)->next))
+	{
+		printf("L%u: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	tmp = (*stack)->next;
+	(*stack)->prev = (*stack)->next;
+	(*stack)->next = tmp->next;
+	tmp->prev = NULL;
+	(*stack)->prev = tmp;
+	if (tmp->next)
+		tmp->next->prev = *stack;
+	tmp->next = *stack;
+	(*stack) = (*stack)->prev;
+}
