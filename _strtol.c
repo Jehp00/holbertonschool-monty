@@ -17,14 +17,16 @@ int _strtol(char *num_str, unsigned int line_num)
 	}
 	if (endptr == num_str)
 	{
-		printf("L%d: usage: push integer\n", line_num);
+		dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_num);
+		/*printf("L%d: usage: push integer\n", line_num);*/
 		exit(EXIT_FAILURE);
 	}
 	if (num_str[0] != '\0')
 	{
 		if (!isdigit(num_str[0]) && *endptr != '\0')
 		{
-			printf("L%d: usage: push integer\n", line_num);
+			dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_num);
+			/*printf("L%d: usage: push integer\n", line_num);*/
 			exit(EXIT_FAILURE);
 			
 		}

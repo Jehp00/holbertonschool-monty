@@ -12,13 +12,15 @@ int file_proccessing(char *name, stack_t **stack)
 
 	if (!name)
 	{
-		printf("Error: Can't open file %s\n", name);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", name);
+		/*printf("Error: Can't open file %s\n", name);*/
 		exit(EXIT_FAILURE);
 	}
 	fp = fopen(name, "r");
 	if (fp == NULL)
 	{
-		printf("Error: Can't open file %s\n", name);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", name);
+		/*printf("Error: Can't open file %s\n", name);*/
 		exit(EXIT_FAILURE);
 	}
 	atexit(free_all);
@@ -60,7 +62,8 @@ void decide_op(stack_t **stack, char *op, unsigned int line_num)
 	}
 	if (strlen(op) != 0 && op[0] != '#')
 	{
-		printf("L%u: unknown instruction %s\n", line_num, op);
+		dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_num, op);
+		/*printf("L%u: unknown instruction %s\n", line_num, op);*/
 		exit(EXIT_FAILURE);
 	}
 }
