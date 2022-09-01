@@ -47,7 +47,7 @@ void instruction_pint(stack_t **stack, unsigned int line_num)
 {
 	if (stack == NULL || *stack == NULL)
 	{
-		dprintf(STDERR_FILENO, "L%u: Can't pint, stack empty\n", line_num);
+		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", line_num);
 		/*printf("L%u: Can't pint, stack empty\n", line_num);*/
 		exit(EXIT_FAILURE);
 	}
