@@ -3,7 +3,7 @@
 void instruction_push(stack_t **stack, unsigned int line_num)
 {
 	stack_t *element = malloc(sizeof(stack_t));
-	char *tokenize;
+	char *op;
 	int num;
 
 	if (element == NULL)
@@ -11,13 +11,13 @@ void instruction_push(stack_t **stack, unsigned int line_num)
 		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	tokenize = strtok(NULL, DELIMITS);
-	if (tokenize == NULL || stack == NULL)
+	op = strtok(NULL, DELIMITS);
+	if (op == NULL || stack == NULL)
 	{
 		printf("L%u: usage: push integer\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-	num = _strtol(tokenize, line_num);
+	num = _strtol(op, line_num);
 	element->n = num;
 	element->prev = NULL;
 	element->next = *stack;
