@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 	stack_int(&head);
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
+		/*printf("USAGE: monty file\n");*/
 		exit(EXIT_FAILURE);
 	}
 	file_proccessing(argv[1], &head);
