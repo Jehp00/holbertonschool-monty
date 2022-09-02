@@ -1,29 +1,11 @@
 #include "monty.h"
 
 /**
- * 
- * 
- * 
- * 
+ * isdigt - this function verifies if digit
+ * @val: character to value
+ * Return: 0 if not digit
+ *
  */
-
-/*int isdigt(char val)
-{
-	int j;
-
-	for (j = 0; val[j] != '\0'; j++)
-	{
-		if (val[j] <= 57 && val[j] >= 48)
-		{
-			continue;
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (1);
-}*/
 
 int isdigt(char val)
 {
@@ -31,8 +13,5 @@ int isdigt(char val)
 	{
 		return (1);
 	}
-	else
-	{
-		return (0);
-	}
-}		
+	return (0);
+}
