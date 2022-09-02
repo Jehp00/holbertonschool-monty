@@ -33,7 +33,6 @@ int _strtol(char *num_str, unsigned int line_num)
 			dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_num);
 			/*printf("L%d: usage: push integer\n", line_num);*/
 			exit(EXIT_FAILURE);
-			
 		}
 	}
 	return (value);

@@ -2,9 +2,9 @@
 
 /**
  * instruction_push - push stack function
- * @stack: stack where we want to push 
+ * @stack: stack where we want to push
  * @line_num: line to push
- * 
+ *
  */
 
 void instruction_push(stack_t **stack, unsigned int line_num)
@@ -20,7 +20,7 @@ void instruction_push(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	op = strtok(NULL, DELIMITS);
-	if (op == NULL || stack == NULL)
+	if (op == NULL || stack == NULL || isdigt(op) != 0)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_num);
 		/*printf("L%u: usage: push integer\n", line_num);*/
@@ -41,26 +41,26 @@ void instruction_push(stack_t **stack, unsigned int line_num)
  * instruction_pall - print all elements in stack
  * @stack: stack to print
  * @line_num: unused variable
- * 
+ *
  */
 
 void instruction_pall(stack_t **stack, unsigned int line_num)
 {
 	stack_t *element = *stack;
-	
+
 	UNUSED(line_num);
 	while (element != NULL)
 	{
 		printf("%d\n", element->n);
 		element = element->next;
-	}	
+	}
 }
 
 /**
  * instruction_pint - prints the value at the top of the stack
- * @stack: stack where we want to operate 
+ * @stack: stack where we want to operate
  * @line_num: line where we find the instruction
- * 
+ *
  */
 void instruction_pint(stack_t **stack, unsigned int line_num)
 {
@@ -75,9 +75,9 @@ void instruction_pint(stack_t **stack, unsigned int line_num)
 
 /**
  * instruction_pop - removes the top of the stack
- * @stack: stack where we want to operate 
- * @line_num: line where we find the instruction
- * 
+ * @stack: stack where we want to operate
+ * @line_number: line where we find the instruction
+ *
  */
 
 void instruction_pop(stack_t **stack, unsigned int line_number)
@@ -97,9 +97,9 @@ void instruction_pop(stack_t **stack, unsigned int line_number)
 
 /**
  * instruction_swap - removes the top of the stack
- * @stack: stack where we want to operate 
- * @line_num: line where we find the instruction
- * 
+ * @stack: stack where we want to operate
+ * @line_number: line where we find the instruction
+ *
  */
 
 void instruction_swap(stack_t **stack, unsigned int line_number)

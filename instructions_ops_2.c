@@ -2,9 +2,9 @@
 
 /**
  * instruction_add - adds the top two elements of the stack
- * @stack: stack where we want to operate 
- * @line_num: line where we find the instruction
- * 
+ * @stack: stack where we want to operate
+ * @line_number: line where we find the instruction
+ *
  */
 
 void instruction_add(stack_t **stack, unsigned int line_number)
@@ -25,9 +25,9 @@ void instruction_add(stack_t **stack, unsigned int line_number)
 
 /**
  * instruction_nop - It does not do anything
- * @stack: stack where we want to operate 
- * @line_num: line where we find the instruction
- * 
+ * @stack: stack where we want to operate
+ * @line_number: line where we find the instruction
+ *
  */
 void instruction_nop(stack_t **stack, unsigned int line_number)
 {

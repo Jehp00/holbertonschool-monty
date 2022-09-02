@@ -67,6 +67,7 @@ extern global_t global;
 
 int file_proccessing(char *name, stack_t **stack);
 void decide_op(stack_t **stack, char *op, unsigned int line_num);
+int isdigt(char *val);
 
 /*Instructions.c*/
 
