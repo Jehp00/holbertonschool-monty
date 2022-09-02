@@ -7,7 +7,7 @@
  * 
  */
 
-int isdigt(char *val)
+/*int isdigt(char val)
 {
 	int j;
 
@@ -19,8 +19,20 @@ int isdigt(char *val)
 		}
 		else
 		{
-			return (1);
+			return (0);
 		}
 	}
-	return (0);
-}
+	return (1);
+}*/
+
+int isdigt(char val)
+{
+	if (val <= 57 && val >= 48)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}		
