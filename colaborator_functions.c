@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * file_proccessing - proccess the whole monty file
+ * @name: str name of monty opcode file
+ * @stack: double pointer to top of stack data strct
+ * Return: return an error or succes
+ */
 
 int file_proccessing(char *name, stack_t **stack)
 {
@@ -38,6 +44,13 @@ int file_proccessing(char *name, stack_t **stack)
 	return (EXIT_SUCCESS);
 }
 
+/**
+ * decide_op - based on tokens from single line, decide what function to call
+ * @stack: double pointer to head of stack data structure
+ * @op: operator, token[0] from getline
+ * @line_num: line in vyte-code file being proccessed, zero indexed
+ * Return: int for mysterious purposes
+ */
 
 void decide_op(stack_t **stack, char *op, unsigned int line_num)
 {

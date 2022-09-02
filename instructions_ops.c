@@ -20,7 +20,7 @@ void instruction_push(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	op = strtok(NULL, DELIMITS);
-	if (op == NULL || stack == NULL )
+	if (op == NULL || stack == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_num);
 		/*printf("L%u: usage: push integer\n", line_num);*/

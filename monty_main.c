@@ -2,11 +2,20 @@
 
 global_t global;
 
+/**
+ * stack_int - initialize all the things
+ * @head: top of stack data structure
+ **/
+
 void stack_int(stack_t **head)
 {
 	*head = NULL;
 	global.top = head;
 }
+
+/**
+ * free_all - frees all malloc memory
+ */
 
 void free_all(void)
 {
@@ -21,6 +30,12 @@ void free_all(void)
 	}
 }
 
+/**
+ * main - monty byte-code interpreter
+ * @argc: number of command line arguments
+ * @argv: aray of strings containing the command line args
+ * Return: EXIT_SUCCES or EXIT_FAILURE
+ */
 
 int main(int argc, char **argv)
 {

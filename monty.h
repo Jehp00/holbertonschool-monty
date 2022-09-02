@@ -18,7 +18,6 @@
 #define TRUE 1
 #define FALSE 0
 #define DELIMITS "\n \t\r"
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,9 +29,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -45,23 +44,24 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
- * struct global_s - globally useful variables, all rolled into one
- * @top: double pointer to top od stack
- * @ops: double point3er to an instruction struct
+ * struct global_s - globally useful variables
+ * @top: double pointer to top of stack
+ * @ops: double pointer to an instruction struct
  */
 
-typedef struct golbal_s
+typedef struct global_s
 {
 	stack_t **top;
 	instruction_t **ops;
 } global_t;
 
 extern global_t global;
+
 /*prototypes*/
 /*colaborator_functions.c*/
 
