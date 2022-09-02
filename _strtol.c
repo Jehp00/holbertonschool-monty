@@ -1,6 +1,11 @@
 #include "monty.h"
 
-
+/**
+ * _strtol - converts a character string to a long int value
+ * @num_str: string to covert
+ * @line_num: line number in the file where we find the function
+ * Return: integer value
+ */
 int _strtol(char *num_str, unsigned int line_num)
 {
 	int base = 10;

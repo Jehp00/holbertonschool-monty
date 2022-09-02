@@ -1,5 +1,12 @@
 #include "monty.h"
 
+/**
+ * instruction_push - push stack function
+ * @stack: stack where we want to push 
+ * @line_num: line to push
+ * 
+ */
+
 void instruction_push(stack_t **stack, unsigned int line_num)
 {
 	stack_t *element = malloc(sizeof(stack_t));
@@ -30,6 +37,12 @@ void instruction_push(stack_t **stack, unsigned int line_num)
 	*stack = element;
 }
 
+/**
+ * instruction_pall - print all elements in stack
+ * @stack: stack to print
+ * @line_num: unused variable
+ * 
+ */
 
 void instruction_pall(stack_t **stack, unsigned int line_num)
 {
@@ -43,6 +56,12 @@ void instruction_pall(stack_t **stack, unsigned int line_num)
 	}	
 }
 
+/**
+ * instruction_pint - prints the value at the top of the stack
+ * @stack: stack where we want to operate 
+ * @line_num: line where we find the instruction
+ * 
+ */
 void instruction_pint(stack_t **stack, unsigned int line_num)
 {
 	if (stack == NULL || *stack == NULL)
@@ -53,6 +72,13 @@ void instruction_pint(stack_t **stack, unsigned int line_num)
 	}
 	printf("%d\n", (*stack)->n);
 }
+
+/**
+ * instruction_pop - removes the top of the stack
+ * @stack: stack where we want to operate 
+ * @line_num: line where we find the instruction
+ * 
+ */
 
 void instruction_pop(stack_t **stack, unsigned int line_number)
 {
@@ -68,6 +94,13 @@ void instruction_pop(stack_t **stack, unsigned int line_number)
 	(*stack) = (*stack)->next;
 	free(node);
 }
+
+/**
+ * instruction_swap - removes the top of the stack
+ * @stack: stack where we want to operate 
+ * @line_num: line where we find the instruction
+ * 
+ */
 
 void instruction_swap(stack_t **stack, unsigned int line_number)
 {
